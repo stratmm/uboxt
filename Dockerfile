@@ -38,6 +38,7 @@ RUN echo "Host github.com\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
 
 # Add dependecies for Ruby project
 RUN apt-get install -y postgresql-client libpq5 libpq-dev
+RUN apt-get install -y nodejs
 
 # Install the bundle
 RUN /bin/bash -l -c "bundle install"
