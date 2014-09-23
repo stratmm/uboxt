@@ -9,7 +9,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "crowdfunding"
+  config.vm.box = "uboxt"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
@@ -23,7 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.network :private_network, ip: "192.168.56.64"
+  config.vm.network :private_network, ip: "192.168.56.54"
 
   # Share an additional folder to the guest VM
   config.vm.synced_folder ".", "/vagrant", :type => "nfs"
