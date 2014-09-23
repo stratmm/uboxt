@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ "$#" == 0 ]
+then
+  docker run --env-file=/vagrant/.env --name=web --publish=3000:3000 --link=postgres:postgres --volume=/vagrant:/project --tty=false --interactive=false --detach=true web
+else
+  docker run --env-file=/vagrant/.env --name=web_run --publish=3000:3000 --link=postgres:postgres --volume=/vagrant:/project --tty=true --interactive=true --detach=false --rm=true web $@
+fi

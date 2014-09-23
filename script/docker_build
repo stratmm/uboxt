@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+cd /vagrant
+
+# Build Postgres
+docker build --tag=local/postgres docker/postgres
+
+# Build main web project
+docker build --tag=web .

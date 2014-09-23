@@ -1,0 +1,12 @@
+#!/bin/bash
+cd /vagrant
+echo Starting required service containers
+
+# login to docker index
+script/docker_login
+
+# Start Postgres
+docker run --name=postgres --detach=true --publish=5432:5432 local/postgres
+read -t5 -n1 -r -p "Waiting for postgres to start..." key
+
+echo "All services started"
