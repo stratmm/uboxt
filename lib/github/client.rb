@@ -12,7 +12,7 @@ module GitHub
     end
 
     def repositories
-      repos = github.repositories([user_name], per_page: 100)
+      repos = github.repositories(user_name, per_page: 100)
       repos.concat github.last_response.rels[:next].get.data if github.last_response.rels[:next]
       repos.to_a
     end
