@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title>
+      = "uboxt"
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => false
+    = csrf_meta_tags
+    = content_tag :link, nil, :rel => "icon", :type => "image/png", :href => asset_path('ruby32.png')
+  %body
+    .container
+      .row
+        .col-md-12
+          = yield
+    = javascript_include_tag "application"
