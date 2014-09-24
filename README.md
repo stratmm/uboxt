@@ -1,6 +1,20 @@
 # Uboxt technical test
 This is a submission to a technical test, the examiner will understand the criteria.
 
+## General approach
+I am currently freelancing for a startup that is going live this week and therefore time for this test has been very constrained.
+
+In order to produce a reasonable result in a short time I have made the following compromises:
+- Used Rails as a template to host the application, this is simply for a fast development startup.
+- Tested only the happy path.  Normally my tests would be considerably more detailed and fully test edge cases and sad path.
+- Written Javascript UI interactions in raw jQuery.  Normally all UI enhancment would be encapsulated in a framework like Backbone Marionette or Angular and be fully tested.
+- Not tested the base static_page controller or router.
+- Used Twitter Bootstrap as a base responsive CSS framework.  Normally I would not do this as it destroys ones ability to have design fidelity, however it is perfect for a project like this.
+- I noticed that Github returns nil languages in the repositories call.  I simply have not had time to address this.
+
+I would welcome the opportunity to fully discuss how this project would be executed in a real client setting.
+
+
 ## Development environment
 ### Vagrant
 When given the choice I create Virtual Box based Vagrant development servers.  This project contains a Vagrant file which will create a fully provisioned VM for this project.
@@ -24,7 +38,7 @@ In general I keep all secrets in .env files and exclude them from the repo.  Thi
 
 In the project root folder create a ```ssh``` folder and copy in a id_rsa public key that grants access to your private github repos.  This key is not included in the repo.
 
-For this project it is not strickly required, however it would be needed to build the ruby docker container where you Gemfile points to private github repos.  I have done it here for demonstration and it is part of my standard Ruby development workflow.
+For this project it is not strictly required, however it would be needed to build the ruby docker container where you Gemfile points to private github repos.  I have done it here for demonstration and it is part of my standard Ruby development workflow.
 
 Execute ```vagrant up```
 
@@ -63,6 +77,5 @@ A single controller ```app/controllers/api/github_users_controller.rb``` support
 
 A small CoffeeScript file ```app/assets/javascripts/main.coffee``` deals with validating the username form field and submitting the ajax request.
 
-All styling is done with Twitter Bootstrap.  I would not normally use this for a real client work that required design fidelity, however it is perfect for this kind of project.
 
 All templates are in HAML.
