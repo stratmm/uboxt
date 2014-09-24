@@ -1,2 +1,35 @@
 %h1
-  = "Hello World"
+  = "Uboxt Technical test"
+%hr
+  %h2= "Github user favorite language"
+.row
+  .col-md-6
+    %form
+      .form-group#username_group
+        %label= "Github username"
+        %input#username.form-control{type: 'text', placeholder: 'github username'}
+      .btn.btn-primary#lookup_button
+        %span.glyphicon.glyphicon-ok
+        = ' Lookup'
+  .col-md-6
+    .form-group#username_group
+      %label= "Result"
+      %span#result.form-control
+.row
+  .col-md-12
+  %hr
+  .row
+    .col-md-2
+      %img.img-responsive.img-thumbnail{src: image_url('mark.jpg')}
+    .col-md-8
+      %strong="Mark Stratmann"
+      %p
+        This is some text to be displayed normally however
+        &nbsp;
+        %span.grey_text
+          @this needs to be in gray.
+    .col-md-2
+      %p.tiny_text.text-right.grey_text
+        7 days
+  .col-md-12
+  %hr
